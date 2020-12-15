@@ -1,0 +1,45 @@
+export const projectData = [
+  {
+    title: "Lake Hopper",
+    description: [
+      "I initially created Lake Hopper to record my own backpacking trips. As an avid backpacker, I wanted a place where I could see all of my past trips and save all the routes, photos, and notes for every trip in one place. I had found myself using multiple apps for backpacking: AllTrails for creating new routes, Garmin for recording activities, Strava for trip analysis/notes, and Google Photos for albums.",
+      "Lake Hopper combines all of these features in one app and makes it much simpler to save all the information for a trip in a single location and to get an overview of all of your backpacking trips!",
+    ],
+    technologies: [
+      "Ruby on Rails",
+      "PostgreSQL",
+      "AWS S3",
+      "React",
+      "Redux",
+      "MapBox",
+      "Material UI",
+    ],
+    photos: ["draw_video.gif"],
+    github: "https://github.com/kiana-h/lake-hopper",
+    live: "https://lakehopper.io",
+  },
+  {
+    title: "Tweet Streamer",
+    description: [],
+    technologies: [
+      "Node.js",
+      "PostgreSQL",
+      "PostGIS",
+      "Sequelize",
+      "Twitter API",
+      "WebSockets",
+      "React",
+    ],
+    photos: ["live-map-.gif"],
+    github: "https://github.com/kiana-h/twitt-stream-er",
+    live: "http://twitt-stream-er.herokuapp.com/",
+  },
+  // {
+  //   title: "Covid Killer",
+  //   description: [],
+  //   technologies: ["JavaScript", "React"],
+  //   photos: ["live-map-.gif"],
+  //   github: "",
+  //   live: "",
+  // },
+];
