@@ -2,8 +2,8 @@ import React from "react";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
-import { List } from "@material-ui/core";
-import { Link } from "@material-ui/core";
+import { List, Button } from "@material-ui/core";
+import { Link } from "react-router-dom";
 
 import useStyles from "./style";
 
@@ -20,9 +20,24 @@ export default function Menu() {
             </Typography>
           </Link>
           <List className={classes.links}>
-            <Link to="/" className={classes.linkItem}>
+            {/* <Link to="/#about" className={classes.linkItem}>
               <Typography variant={linkType} className={classes.title}>
                 About
+              </Typography>
+            </Link> */}
+            <Link to="/#code" className={classes.linkItem}>
+              <Typography variant={linkType} className={classes.title}>
+                Code
+              </Typography>
+            </Link>
+            <Link to="/#design" className={classes.linkItem}>
+              <Typography variant={linkType} className={classes.title}>
+                Design
+              </Typography>
+            </Link>
+            <Link to="/#contact" className={classes.linkItem}>
+              <Typography variant={linkType} className={classes.title}>
+                Contact
               </Typography>
             </Link>
             <a
@@ -34,19 +49,11 @@ export default function Menu() {
               className={classes.linkItem}
             >
               <Typography variant={linkType} className={classes.title}>
-                Resume
+                <Button className={classes.resume} variant="outlined">
+                  Resume
+                </Button>
               </Typography>
             </a>
-            <Link to="/" className={classes.linkItem}>
-              <Typography variant={linkType} className={classes.title}>
-                Code
-              </Typography>
-            </Link>
-            <Link to="/" className={classes.linkItem}>
-              <Typography variant={linkType} className={classes.title}>
-                Architecture
-              </Typography>
-            </Link>
           </List>
         </Toolbar>
       </AppBar>

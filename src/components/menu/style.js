@@ -1,15 +1,22 @@
 import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({
+  appbar: {
+    backgroundColor: "rgba(255,255,255,.9)",
+    boxShadow: "none",
+    padding: 0,
+    margin: 0,
+    paddingLeft: theme.spacing(5),
+    paddingRight: theme.spacing(5),
+  },
   root: {
     flexGrow: 1,
     width: "100%",
-  },
-  appbar: {
-    backgroundColor: "transparent",
-    boxShadow: "none",
-    paddingLeft: theme.spacing(5),
-    paddingRight: theme.spacing(5),
+    position: "fixed",
+    top: 0,
+    zIndex: "1000",
+    padding: 0,
+    margin: 0,
   },
   menuButton: {
     marginRight: theme.spacing(2),
@@ -25,6 +32,7 @@ const useStyles = makeStyles((theme) => ({
   },
   links: {
     display: "flex",
+    fontSize: ".75rem",
   },
   linkItem: {
     color: "black",
@@ -35,10 +43,19 @@ const useStyles = makeStyles((theme) => ({
       color: "#16becf",
     },
   },
+  resume: {
+    fontSize: ".75rem",
+    borderColor: "#16becf",
+    "&:hover": {
+      color: "white",
+      fontWeight: "600",
+      backgroundColor: "#16becf",
+    },
+  },
   pageTitle: {
     color: "black",
     fontWeight: "600",
-    textShadow: "3px 0px #16becf",
+    textShadow: "2px 0px #16becf",
   },
 }));
 

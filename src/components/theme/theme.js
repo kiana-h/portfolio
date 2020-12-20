@@ -6,11 +6,14 @@ const Theme = createMuiTheme({
   },
   palette: {
     primary: {
-      main: "#6FCF97",
+      main: "#00c1d1",
     },
     secondary: {
-      main: "#BC9CFF",
+      main: "#04828a",
     },
+  },
+  titleWrap: {
+    color: "red",
   },
 });
 

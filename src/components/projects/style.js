@@ -4,16 +4,15 @@ const useStyles = makeStyles((theme) => ({
   root: {
     width: "1150px",
     margin: "0 auto",
+    borderTop: "1px solid",
+    borderColor: "rgba(120, 120, 120, 0.5)",
+    paddingTop: "150px",
   },
+
   projectItem: {
     display: "flex",
     justifyContent: "space-between",
-    marginBottom: "100px",
-  },
-  projectPhoto: {
-    width: "550px",
-    height: "auto",
-    marginLeft: "100px",
+    marginBottom: "150px",
   },
   projectDesc: {
     width: "500px",
@@ -30,10 +29,24 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: theme.spacing(4),
   },
   link: {
-    color: "#0e9bd8",
+    color: "#00818b",
     "&:hover": {
       color: "black",
     },
+  },
+  photoContainer: {
+    width: "550PX",
+    height: "350px",
+    overflow: "hidden",
+  },
+  projectPhoto: {
+    width: "550px",
+    height: "auto",
+    marginLeft: "100px",
+  },
+  dotContainer: {
+    display: "flex",
+    listStyleType: "none",
   },
 }));
 
