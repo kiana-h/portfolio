@@ -15,9 +15,12 @@ export default function ProjectItem({ project, number }) {
 
   const descriptionList = (arr) => {
     return arr.map((text, i) => (
-      <Typography key={`desc-${number}-${i}`} variant="body2">
-        {text}
-      </Typography>
+      <div>
+        <Typography key={`desc-${number}-${i}`} variant="body2">
+          {text}
+        </Typography>
+        <br />
+      </div>
     ));
   };
 

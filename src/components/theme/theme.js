@@ -4,6 +4,7 @@ const Theme = createMuiTheme({
   typography: {
     fontFamily: ["Montserrat", "sans-serif"].join(","),
   },
+
   palette: {
     primary: {
       main: "#00c1d1",
@@ -11,9 +12,6 @@ const Theme = createMuiTheme({
     secondary: {
       main: "#04828a",
     },
-  },
-  titleWrap: {
-    color: "red",
   },
 });
 

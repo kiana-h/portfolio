@@ -10,7 +10,7 @@ import IconButton from "@material-ui/core/IconButton";
 import InfoIcon from "@material-ui/icons/Info";
 
 import theme from "../theme/theme";
-import Modal from "./modal";
+import Modal from "./modal/modal";
 import { designData } from "../../data/design_projects";
 const imagePath = process.env.PUBLIC_URL + "/assets/design/";
 
@@ -50,39 +50,30 @@ const useStyles = makeStyles((theme) => ({
     filter: "grayscale(100%)",
     "&:hover": {
       filter: "none",
+      cursor: "pointer",
     },
   },
 }));
 const tileData = designData;
 
-/**
- * The example data is structured as follows:
- *
- * import image from 'path/to/image.jpg';
- * [etc...]
- *
- * const tileData = [
- *   {
- *     img: image,
- *     title: 'Image',
- *     author: 'author',
- *   },
- *   {
- *     [etc...]
- *   },
- * ];
- */
 export default function DesignProjects({ section }) {
   const classes = useStyles(theme);
-  const [hoverId, SetHoverId] = useState(null);
+  const [hoverId, setHoverId] = useState(null);
+  const [openId, setOpenId] = useState(null);
 
-  const handleHover = (e) => {
-    SetHoverId(e.currentTarget.id);
+  const handleHover = (id) => {
+    setHoverId(id);
   };
   const handleHoverEnd = () => {
-    SetHoverId(null);
+    setHoverId(null);
   };
-  const [openId, SetOpenId] = useState(null);
+  const handleOpen = (id) => {
+    setOpenId(id);
+  };
+  const handleClose = () => {
+    setOpenId(null);
+  };
+
   return (
     <div className={classes.root} id={section}>
       <GridList cellHeight={240} cols={3} className={classes.gridList}>
@@ -94,32 +85,38 @@ export default function DesignProjects({ section }) {
         {tileData.map((tile, i) => (
           <GridListTile
             key={`tile-${i}`}
-            id={tile.code}
-            onMouseEnter={handleHover}
+            onMouseEnter={() => handleHover(tile.code)}
             onMouseLeave={handleHoverEnd}
             className={classes.gridImg}
           >
             <img
               src={imagePath + tile.code + "/" + tile.photos[0] + ".png"}
               alt={tile.title}
+              onClick={() => handleOpen(tile.code)}
             />
 
-            <Fade in={hoverId === tile.code}>
+            {hoverId === tile.code && (
               <GridListTileBar
                 className={classes.tilebar}
                 title={tile.title}
                 subtitle={<span> {tile.subtitle}</span>}
                 actionIcon={
-                  <Modal tile={tile} />
-                  // <IconButton
-                  //   aria-label={`info about ${tile.title}`}
-                  //   className={classes.icon}
-                  // >
-                  //   <InfoIcon />
-                  // </IconButton>
+                  // <Modal tile={tile} />
+                  <IconButton
+                    aria-label={`info about ${tile.title}`}
+                    className={classes.icon}
+                    onClick={() => handleOpen(tile.code)}
+                  >
+                    <InfoIcon />
+                  </IconButton>
                 }
               />
-            </Fade>
+            )}
+            <Modal
+              tile={tile}
+              close={handleClose}
+              open={openId === tile.code}
+            />
           </GridListTile>
         ))}
       </GridList>

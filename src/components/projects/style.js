@@ -48,6 +48,12 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     listStyleType: "none",
   },
+  paragraph: {
+    marginbBottom: "100px",
+  },
+  hidden: {
+    display: "none",
+  },
 }));
 
 export default useStyles;
