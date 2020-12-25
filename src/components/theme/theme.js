@@ -4,12 +4,13 @@ const Theme = createMuiTheme({
   typography: {
     fontFamily: ["Montserrat", "sans-serif"].join(","),
   },
+
   palette: {
     primary: {
-      main: "#6FCF97",
+      main: "#00c1d1",
     },
     secondary: {
-      main: "#BC9CFF",
+      main: "#04828a",
     },
   },
 });

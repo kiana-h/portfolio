@@ -1,16 +1,59 @@
-import React from "react";
+import React, { useState } from "react";
 import Typography from "@material-ui/core/Typography";
 import { List } from "@material-ui/core";
 import { Link } from "@material-ui/core";
 import useStyles from "./style";
-const imagePath = process.env.PUBLIC_URL + "/assets/project-screenshots/";
+
+// import Gallery from "./gallery";
+// import "antd/dist/antd.css";
+// import { Carousel } from "antd";
 
 export default function ProjectItem({ project, number }) {
+  const imagePath = process.env.PUBLIC_URL + "/assets/project-screenshots/";
   const classes = useStyles();
-  console.log(project);
+  const [imgNum, setImgNum] = useState(0);
+
   const descriptionList = (arr) => {
-    return arr.map((text) => <Typography variant="body2">{text}</Typography>);
+    return arr.map((text, i) => (
+      <div>
+        <Typography key={`desc-${number}-${i}`} variant="body2">
+          {text}
+        </Typography>
+        <br />
+      </div>
+    ));
   };
+
+  // const dots = () => {
+  //   let dotList = [];
+  //   for (let i = 0; i < project.photos.length; i++) {
+  //     dotList.push(
+  //       <li key={`dot-${number}-${i}`} onClick>
+  //         o
+  //       </li>
+  //     );
+  //   }
+  //   return dotList;
+  // };
+
+  // const photolist = () => {
+  //   return project.photos.map((url, i) => (
+  //     <div key={`imgContainer-${number}-${i}`}>
+  //       <img
+  //         key={`img-${number}-${i}`}
+  //         src={imagePath + url}
+  //         style={contentStyle}
+  //       ></img>
+  //     </div>
+  //   ));
+  // };
+  // const contentStyle = {
+  //   width: "100%",
+  //   color: "#fff",
+  //   lineHeight: "160px",
+  //   textAlign: "center",
+  //   background: "#364d79",
+  // };
 
   return (
     <div className={classes.projectItem}>
@@ -41,12 +84,12 @@ export default function ProjectItem({ project, number }) {
           </List>
         </div>
       </div>
-      <div className={classes.photoContainer}>
+      <div>
         <img
           className={classes.projectPhoto}
-          src={imagePath + project.photos[0]}
-          alt={project.photos[0]}
+          src={imagePath + project.photos[imgNum]}
         />
+        {/* <ul className={classes.dotContainer}>{dots()}</ul> */}
       </div>
     </div>
   );

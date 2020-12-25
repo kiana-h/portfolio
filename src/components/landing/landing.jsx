@@ -46,19 +46,7 @@ export default function Landing() {
           I make things in the digital and physical world.
         </Typography>
       </List>
-      <div className={classes.border}></div>
+      {/* <div className={classes.border}></div> */}
     </div>
   );
 }
-
-// const Landing = () => {
-//   const noun = "hello";
-//   return (
-//     <div>
-//       <h1>Hello</h1>
-//       <p>My name is Kiana Hosseini.</p>
-//       <p>I am {noun},</p>
-//       <p>based in San Francisco.</p>
-//     </div>
-//   );
-// };

@@ -19,14 +19,9 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: "column",
     width: "800px",
     margin: "200px auto",
+    marginBottom: "400px",
   },
-  border: {
-    height: "00px",
-    width: "80vw",
-    borderColor: "rgb(120,120,120)",
-    borderTop: "1px solid black",
-    margin: "300px auto",
-  },
+
   textContainer: {
     display: "flex",
   },
