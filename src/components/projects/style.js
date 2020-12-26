@@ -47,7 +47,7 @@ const useStyles = makeStyles((theme) => ({
   },
   projectPhoto: {
     width: "550px",
-    height: "auto",
+    height: "317px",
   },
   photoTitle: {
     width: "550px",
