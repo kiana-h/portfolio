@@ -79,7 +79,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   largeDot: {
-    color: "black",
+    backgroundColor: "#16becf",
     width: "10px",
     height: "10px",
   },
