@@ -46,6 +46,8 @@ const useStyles = makeStyles((theme) => ({
   resume: {
     fontSize: ".75rem",
     borderColor: "#16becf",
+    color: "#16becf",
+    fontWeight: "700",
     "&:hover": {
       color: "white",
       fontWeight: "600",

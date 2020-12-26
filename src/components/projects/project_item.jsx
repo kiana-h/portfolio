@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import Typography from "@material-ui/core/Typography";
 import { List } from "@material-ui/core";
 import { Link } from "@material-ui/core";
+import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
+import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
 import useStyles from "./style";
 
 // import Gallery from "./gallery";
@@ -12,10 +14,11 @@ export default function ProjectItem({ project, number }) {
   const imagePath = process.env.PUBLIC_URL + "/assets/project-screenshots/";
   const classes = useStyles();
   const [imgNum, setImgNum] = useState(0);
+  const [visible, setVisibility] = useState(false);
 
   const descriptionList = (arr) => {
     return arr.map((text, i) => (
-      <div>
+      <div key={`desc-${number}-${i}`}>
         <Typography key={`desc-${number}-${i}`} variant="body2">
           {text}
         </Typography>
@@ -24,36 +27,32 @@ export default function ProjectItem({ project, number }) {
     ));
   };
 
-  // const dots = () => {
-  //   let dotList = [];
-  //   for (let i = 0; i < project.photos.length; i++) {
-  //     dotList.push(
-  //       <li key={`dot-${number}-${i}`} onClick>
-  //         o
-  //       </li>
-  //     );
-  //   }
-  //   return dotList;
-  // };
+  const moveCarousel = (direction) => {
+    const nextImg =
+      (imgNum + direction + project.photos.length) % project.photos.length;
+    setImgNum(nextImg);
+  };
 
-  // const photolist = () => {
-  //   return project.photos.map((url, i) => (
-  //     <div key={`imgContainer-${number}-${i}`}>
-  //       <img
-  //         key={`img-${number}-${i}`}
-  //         src={imagePath + url}
-  //         style={contentStyle}
-  //       ></img>
-  //     </div>
-  //   ));
-  // };
-  // const contentStyle = {
-  //   width: "100%",
-  //   color: "#fff",
-  //   lineHeight: "160px",
-  //   textAlign: "center",
-  //   background: "#364d79",
-  // };
+  const dots = () => {
+    let dotList = [];
+    for (let i = 0; i < project.photos.length; i++) {
+      dotList.push(
+        <li
+          key={`dot-${number}-${i}`}
+          className={`${classes.dot} ${imgNum === i ? classes.largeDot : ""}`}
+        ></li>
+      );
+    }
+    return dotList;
+  };
+
+  const contentStyle = {
+    width: "100%",
+    color: "#fff",
+    lineHeight: "160px",
+    textAlign: "center",
+    background: "#364d79",
+  };
 
   return (
     <div className={classes.projectItem}>
@@ -73,23 +72,62 @@ export default function ProjectItem({ project, number }) {
           </Typography>
         </div>
         <div>
-          <List className={classes.projectDesc}>
-            {descriptionList(project.description)}
-          </List>
-          <Typography variant="h6">Technologies:</Typography>
           <List className={classes.projectTechs}>
-            <Typography variant="body2">
+            <Typography variant="body2" className={classes.bold}>
               {project.technologies.join(", ")}
             </Typography>
           </List>
+          <List className={classes.projectDesc}>
+            {descriptionList(project.description)}
+          </List>
+          {/* <Typography variant="h6">Technologies:</Typography> */}
+          {/* <List className={classes.projectTechs}>
+            <Typography variant="body2">
+              {project.technologies.join(", ")}
+            </Typography>
+          </List> */}
         </div>
       </div>
-      <div>
-        <img
-          className={classes.projectPhoto}
-          src={imagePath + project.photos[imgNum]}
-        />
-        {/* <ul className={classes.dotContainer}>{dots()}</ul> */}
+      <div
+        className={classes.photoContainer}
+        onMouseEnter={() => {
+          setVisibility(true);
+        }}
+        onMouseLeave={() => {
+          setVisibility(false);
+        }}
+      >
+        <div className={classes.imageArrows}>
+          <ArrowBackIosIcon
+            className={`${classes.arrow} ${
+              !visible || project.photos.length < 2 ? classes.hidden : ""
+            }`}
+            onClick={() => {
+              moveCarousel(-1);
+            }}
+          />
+
+          <img
+            className={classes.projectPhoto}
+            src={imagePath + project.photos[imgNum].url}
+          />
+
+          <ArrowForwardIosIcon
+            className={`${classes.arrow} ${classes.rightArrow} ${
+              !visible || project.photos.length < 2 ? classes.hidden : ""
+            }`}
+            onClick={() => {
+              moveCarousel(1);
+            }}
+          />
+        </div>
+        <Typography
+          variant="subtitle1"
+          className={`${classes.photoTitle} ${visible ? "" : classes.hidden}`}
+        >
+          {project.photos[imgNum].title}
+        </Typography>
+        <ul className={classes.dotContainer}>{dots()}</ul>
       </div>
     </div>
   );

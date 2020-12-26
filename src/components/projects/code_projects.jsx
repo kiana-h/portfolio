@@ -1,8 +1,22 @@
-import ProjectIndex from "./project_index";
+import React from "react";
+import Typography from "@material-ui/core/Typography";
+import { List } from "@material-ui/core";
+import { Link } from "@material-ui/core";
 import { codeData } from "../../data/coding_projects";
+import ProjectItem from "./project_item";
+import useStyles from "./style";
 
-const CodeProjects = () => {
-  return <ProjectIndex projectData={codeData} section="#code" />;
-};
+export default function ProjectIndex() {
+  const classes = useStyles();
 
-export default CodeProjects;
+  const projectList = (items) => {
+    return items.map((item, i) => (
+      <ProjectItem key={`project-${i}`} project={item} number={i + 1} />
+    ));
+  };
+  return (
+    <div className={classes.root} id="#code">
+      <List>{projectList(codeData)}</List>
+    </div>
+  );
+}
