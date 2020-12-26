@@ -15,7 +15,16 @@ export const codeData = [
       "MapBox",
       "Material UI",
     ],
-    photos: ["draw_video_notab.gif"],
+    photos: [
+      { url: "draw_video_notab.gif", title: "Creating Custom Routes" },
+      { url: "landing.png", title: "Landing Page" },
+      { url: "trip_show.gif", title: "Trip Display" },
+      { url: "trip_index.gif", title: "Trip Index" },
+      {
+        url: "upload_video_notab.gif",
+        title: "Uploading Files From Smartwatch",
+      },
+    ],
     github: "https://github.com/kiana-h/lake-hopper",
     live: "https://lakehopper.io",
   },
@@ -36,7 +45,10 @@ export const codeData = [
       "WebSockets",
       "React",
     ],
-    photos: ["live-map-.gif"],
+    photos: [
+      { url: "live-map-.gif", title: "Live Stream of Worldwide Tweets" },
+      { url: "history-map.gif", title: "Weekly History of Aggregated Tweets" },
+    ],
     github: "https://github.com/kiana-h/twitt-stream-er",
     live: "http://twitt-stream-er.herokuapp.com/",
   },
@@ -49,7 +61,11 @@ export const codeData = [
       "Differenet collision handler functions are implemented to manage the interaction of objects.",
     ],
     technologies: ["JavaScript", "HTML Canvas"],
-    photos: ["gameplay.gif"],
+    photos: [
+      { url: "gameplay.gif", title: "Game Play" },
+      { url: "start_dialog.png", title: "Start Dialog / Game Parameters" },
+    ],
+
     github: "https://github.com/kiana-h/covid-killer",
     live: "https://kiana-h.github.io/covid-killer/",
   },
