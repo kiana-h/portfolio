@@ -10,7 +10,7 @@ import IconButton from "@material-ui/core/IconButton";
 import InfoIcon from "@material-ui/icons/Info";
 
 import theme from "../theme/theme";
-import Modal from "./modal";
+import Modal from "./modal/modal";
 import { designData } from "../../data/design_projects";
 const imagePath = process.env.PUBLIC_URL + "/assets/design/";
 
