@@ -40,6 +40,9 @@ export default function ProjectItem({ project, number }) {
         <li
           key={`dot-${number}-${i}`}
           className={`${classes.dot} ${imgNum === i ? classes.largeDot : ""}`}
+          onClick={() => {
+            setImgNum(i);
+          }}
         ></li>
       );
     }
@@ -80,12 +83,6 @@ export default function ProjectItem({ project, number }) {
           <List className={classes.projectDesc}>
             {descriptionList(project.description)}
           </List>
-          {/* <Typography variant="h6">Technologies:</Typography> */}
-          {/* <List className={classes.projectTechs}>
-            <Typography variant="body2">
-              {project.technologies.join(", ")}
-            </Typography>
-          </List> */}
         </div>
       </div>
       <div
