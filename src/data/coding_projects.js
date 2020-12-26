@@ -21,7 +21,7 @@ export const codeData = [
       { url: "trip_show.gif", title: "Trip Display" },
       { url: "trip_index.gif", title: "Trip Index" },
       {
-        url: "upload_video_notab.gif",
+        url: "upload_video.gif",
         title: "Uploading Files From Smartwatch",
       },
     ],
@@ -46,7 +46,7 @@ export const codeData = [
       "React",
     ],
     photos: [
-      { url: "live-map-.gif", title: "Live Stream of Worldwide Tweets" },
+      { url: "live-map.gif", title: "Live Stream of Worldwide Tweets" },
       { url: "history-map.gif", title: "Weekly History of Aggregated Tweets" },
     ],
     github: "https://github.com/kiana-h/twitt-stream-er",
