@@ -44,7 +44,7 @@ const styles = (theme) => ({
     boxSizing: "border-box",
     marginRight: "20px",
     height: "450px",
-    overflow: "scroll",
+    overflow: "auto",
   },
   modalGallery: {
     boxSizing: "border-box",
