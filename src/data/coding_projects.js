@@ -50,7 +50,7 @@ export const codeData = [
       { url: "history-map.gif", title: "Weekly History of Aggregated Tweets" },
     ],
     github: "https://github.com/kiana-h/twitt-stream-er",
-    live: "http://twitt-stream-er.herokuapp.com/",
+    live: "https://tweetstreamer.com",
   },
   {
     title: "Covid Killer",
