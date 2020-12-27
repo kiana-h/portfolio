@@ -25,3 +25,4 @@ yarn-error.log*
 playground
 xtra
 .DS_Store
+.eslintcache
