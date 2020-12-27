@@ -105,24 +105,19 @@ const DialogContent = withStyles((theme) => ({
 
 const CustomizedDialogs = withStyles(styles)((props) => {
   const { children, classes, close, open, tile, ...other } = props;
-  // const [open, setOpen] = React.useState(false);
   const [hoverId, setHoverId] = React.useState(0);
-
-  // const handleClickOpen = () => {
-  //   setOpen(true);
-  // };
 
   const handleClose = () => {
     close();
   };
-  const handleHover = (e) => {
-    const hoverId = e.currentTarget.alt.split("-")[0];
 
-    setHoverId(hoverId);
+  const handleHover = (i) => {
+    setHoverId(i);
   };
-  const handleHoverEnd = () => {
-    setHoverId(0);
-  };
+
+  // const handleHoverEnd = () => {
+  //   setHoverId(0);
+  // };
 
   const description = (description) => {
     return description.map((paragraph, i) => {
@@ -141,8 +136,10 @@ const CustomizedDialogs = withStyles(styles)((props) => {
     const thumbs = photos.map((photoUrl, i) => {
       return (
         <img
-          onMouseEnter={handleHover}
-          onMouseLeave={handleHoverEnd}
+          onMouseEnter={() => {
+            handleHover(i);
+          }}
+          // onMouseLeave={handleHoverEnd}
           className={classes.thumb}
           src={imagePath + code + "/" + photoUrl + ".png"}
           alt={`${i}-thumb-${code}`}
@@ -170,7 +167,7 @@ const CustomizedDialogs = withStyles(styles)((props) => {
           {code === "dish_geo" && (
             <img
               onMouseEnter={handleHover}
-              onMouseLeave={handleHoverEnd}
+              // onMouseLeave={handleHoverEnd}
               className={classes.thumb}
               src={imagePath + code + "/dish_geo7.gif"}
               alt={`7-thumb-${code}`}
@@ -184,13 +181,6 @@ const CustomizedDialogs = withStyles(styles)((props) => {
 
   return (
     <div>
-      {/* <IconButton
-        aria-label={`info about ${tile.title}`}
-        className={classes.icon}
-        onClick={handleClickOpen}
-      >
-        <InfoIcon className={classes.icon} />
-      </IconButton> */}
       <Dialog
         onClose={handleClose}
         aria-labelledby="customized-dialog-title"
