@@ -103,11 +103,27 @@ export default function ProjectItem({ project, number }) {
               moveCarousel(-1);
             }}
           />
-
-          <img
-            className={classes.projectPhoto}
-            src={imagePath + project.photos[imgNum].url}
-          />
+          {project.photos[imgNum].url.split(".").reverse()[0] === "mp4" ? (
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
+              className={classes.projectPhoto}
+              key={project.title + imgNum}
+            >
+              <source
+                src={imagePath + project.photos[imgNum].url}
+                type="video/mp4"
+              />
+              {/* <img src={imagePath + project.photos[imgNum].url} /> */}
+            </video>
+          ) : (
+            <img
+              className={classes.projectPhoto}
+              src={imagePath + project.photos[imgNum].url}
+            />
+          )}
 
           <ArrowForwardIosIcon
             className={`${classes.arrow} ${classes.rightArrow} ${
