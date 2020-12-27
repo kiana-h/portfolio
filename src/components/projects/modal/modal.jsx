@@ -166,7 +166,9 @@ const CustomizedDialogs = withStyles(styles)((props) => {
           {thumbs}
           {code === "dish_geo" && (
             <img
-              onMouseEnter={handleHover}
+              onMouseEnter={() => {
+                handleHover(i);
+              }}
               // onMouseLeave={handleHoverEnd}
               className={classes.thumb}
               src={imagePath + code + "/dish_geo7.gif"}
