@@ -16,12 +16,12 @@ export const codeData = [
       "Material UI",
     ],
     photos: [
-      { url: "draw_video_notab.gif", title: "Creating Custom Routes" },
+      { url: "draw_video_notab.mp4", title: "Creating Custom Routes" },
       { url: "landing.png", title: "Landing Page" },
-      { url: "trip_show.gif", title: "Trip Display" },
-      { url: "trip_index.gif", title: "Trip Index" },
+      { url: "trip_show.mp4", title: "Trip Display" },
+      { url: "trip_index.mp4", title: "Trip Index" },
       {
-        url: "upload_video.gif",
+        url: "upload_video.mp4",
         title: "Uploading Files From Smartwatch",
       },
     ],
@@ -46,8 +46,8 @@ export const codeData = [
       "React",
     ],
     photos: [
-      { url: "live-map.gif", title: "Live Stream of Worldwide Tweets" },
-      { url: "history-map.gif", title: "Weekly History of Aggregated Tweets" },
+      { url: "live-map.mp4", title: "Live Stream of Worldwide Tweets" },
+      { url: "history-map.mp4", title: "Weekly History of Aggregated Tweets" },
     ],
     github: "https://github.com/kiana-h/twitt-stream-er",
     live: "https://tweetstreamer.com",
@@ -62,7 +62,7 @@ export const codeData = [
     ],
     technologies: ["JavaScript", "HTML Canvas"],
     photos: [
-      { url: "gameplay.gif", title: "Game Play" },
+      { url: "gameplay.mp4", title: "Game Play" },
       { url: "start_dialog.png", title: "Start Dialog / Game Parameters" },
     ],
 
