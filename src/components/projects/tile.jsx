@@ -45,13 +45,6 @@ export default function Tile({ tile, index }) {
   const [hoverId, setHoverId] = useState(null);
   const [open, setOpen] = useState(false);
 
-  const handleClickOpen = () => {
-    setOpen(true);
-  };
-  const handleClose = () => {
-    setOpen(false);
-  };
-
   const handleHover = (e) => {
     setHoverId(e.currentTarget.id);
   };
