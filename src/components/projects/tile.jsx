@@ -25,11 +25,6 @@ const useStyles = makeStyles((theme) => ({
     borderColor: "rgba(120,120,120,.5)",
     margin: "0 auto",
     padding: "150px 0",
-    // backgroundColor: theme.palette.background.paper,
-  },
-  gridList: {
-    // width: 1150,
-    // height: 800,
   },
   icon: {
     color: "rgba(255, 255, 255, 0.54)",

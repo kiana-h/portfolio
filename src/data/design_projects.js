@@ -84,7 +84,8 @@ export const designData = [
     code: "dish_geo",
     description: [""],
     subtitle: "Yale University: Mark Gage Studio - 2015",
-    count: 6,
+    count: 7,
+    video: [7],
   },
   {
     title: "Fabrication",
