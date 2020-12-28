@@ -1,14 +1,11 @@
 import React from "react";
 import { withStyles } from "@material-ui/core/styles";
-import Button from "@material-ui/core/Button";
 import Dialog from "@material-ui/core/Dialog";
 import MuiDialogTitle from "@material-ui/core/DialogTitle";
 import MuiDialogContent from "@material-ui/core/DialogContent";
-import MuiDialogActions from "@material-ui/core/DialogActions";
 import IconButton from "@material-ui/core/IconButton";
 import CloseIcon from "@material-ui/icons/Close";
 import Typography from "@material-ui/core/Typography";
-import InfoIcon from "@material-ui/icons/Info";
 
 const imagePath = process.env.PUBLIC_URL + "/assets/design/";
 
@@ -105,7 +102,7 @@ const DialogContent = withStyles((theme) => ({
 
 const CustomizedDialogs = withStyles(styles)((props) => {
   const { children, classes, close, open, tile, ...other } = props;
-  const [hoverId, setHoverId] = React.useState(0);
+  const [hoverId, setHoverId] = React.useState(1);
 
   const handleClose = () => {
     close();
@@ -132,51 +129,74 @@ const CustomizedDialogs = withStyles(styles)((props) => {
       );
     });
   };
-  const photoGallery = (photos, code) => {
-    const thumbs = photos.map((photoUrl, i) => {
-      return (
-        <img
-          onMouseEnter={() => {
-            handleHover(i);
-          }}
-          // onMouseLeave={handleHoverEnd}
-          className={classes.thumb}
-          src={imagePath + code + "/" + photoUrl + ".png"}
-          alt={`${i}-thumb-${code}`}
-          key={`${i}-thumb-${code}`}
-        ></img>
-      );
-    });
+
+  const getThumbs = (code, count, videos) => {
+    const len = count + 1 || 11;
+    let thumbList = [];
+    for (let i = 1; i < len; i++) {
+      if (videos && videos.includes(i)) {
+        thumbList.push(
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className={classes.thumb}
+            onMouseEnter={() => {
+              handleHover(i);
+            }}
+          >
+            <source
+              src={imagePath + code + "/" + code + i + ".mp4"}
+              type="video/mp4"
+            />
+          </video>
+        );
+      } else {
+        thumbList.push(
+          <img
+            onMouseEnter={() => {
+              handleHover(i);
+            }}
+            className={classes.thumb}
+            src={imagePath + code + "/" + code + i + ".png"}
+            alt={`${i}-thumb-${code}`}
+            key={`${i}-thumb-${code}`}
+          ></img>
+        );
+      }
+    }
+    return thumbList;
+  };
+
+  const photoGallery = (code, count, videos) => {
+    const thumbs = getThumbs(code, count, videos);
+    // return tile.video && hoverId in tile.video ? </> : </>
     return (
       <div>
         <div className={classes.modalImageContainer}>
-          {code === "dish_geo" && hoverId === "7" ? (
-            <img
+          {tile.video && tile.video.includes(hoverId) ? (
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
               className={classes.modalImage}
-              src={imagePath + code + "/dish_geo7.gif"}
-            ></img>
+              key={code + hoverId}
+            >
+              <source
+                src={imagePath + code + "/" + code + hoverId + ".mp4"}
+                type="video/mp4"
+              />
+            </video>
           ) : (
             <img
               className={classes.modalImage}
-              src={imagePath + code + "/" + photos[hoverId] + ".png"}
+              src={imagePath + code + "/" + code + hoverId + ".png"}
             ></img>
           )}
         </div>
-        <div className={classes.modalThumbRow}>
-          {thumbs}
-          {code === "dish_geo" && (
-            <img
-              onMouseEnter={() => {
-                handleHover(i);
-              }}
-              // onMouseLeave={handleHoverEnd}
-              className={classes.thumb}
-              src={imagePath + code + "/dish_geo7.gif"}
-              alt={`7-thumb-${code}`}
-              key={`7-thumb-${code}`}
-            ></img>
-          )}
-        </div>
+        <div className={classes.modalThumbRow}>{thumbs}</div>
       </div>
     );
   };
@@ -200,7 +220,7 @@ const CustomizedDialogs = withStyles(styles)((props) => {
             {description(tile.description)}
           </div>
           <div className={classes.modalGallery}>
-            {photoGallery(tile.photos, tile.code)}
+            {photoGallery(tile.code, tile.count, tile.video)}
           </div>
         </DialogContent>
       </Dialog>
