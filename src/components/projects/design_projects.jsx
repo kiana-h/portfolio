@@ -14,15 +14,6 @@ import Modal from "./modal/modal";
 import { designData } from "../../data/design_projects";
 const imagePath = process.env.PUBLIC_URL + "/assets/design/";
 
-for (let project of designData) {
-  let names = [];
-  const len = project.count + 1 || 11;
-  for (let i = 1; i < len; i++) {
-    names.push(project.code + i.toString());
-  }
-  project.photos = names;
-}
-
 const useStyles = makeStyles((theme) => ({
   root: {
     width: "1150px",
@@ -34,12 +25,8 @@ const useStyles = makeStyles((theme) => ({
     borderColor: "rgba(120,120,120,.5)",
     margin: "0 auto",
     padding: "150px 0",
-    // backgroundColor: theme.palette.background.paper,
   },
-  gridList: {
-    // width: 1150,
-    // height: 800,
-  },
+
   icon: {
     color: "rgba(255, 255, 255, 0.54)",
   },
@@ -77,11 +64,11 @@ export default function DesignProjects({ section }) {
   return (
     <div className={classes.root} id={section}>
       <GridList cellHeight={240} cols={3} className={classes.gridList}>
-        <GridListTile key="Subheader" cols={3} style={{ height: "auto" }}>
-          {/* <ListSubheader component="div">
-            Featured Design Work
-          </ListSubheader> */}
-        </GridListTile>
+        <GridListTile
+          key="Subheader"
+          cols={3}
+          style={{ height: "auto" }}
+        ></GridListTile>
         {tileData.map((tile, i) => (
           <GridListTile
             key={`tile-${i}`}
@@ -90,7 +77,7 @@ export default function DesignProjects({ section }) {
             className={classes.gridImg}
           >
             <img
-              src={imagePath + tile.code + "/" + tile.photos[0] + ".png"}
+              src={imagePath + tile.code + "/" + tile.code + "1" + ".png"}
               alt={tile.title}
               onClick={() => handleOpen(tile.code)}
             />
