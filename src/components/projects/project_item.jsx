@@ -1,14 +1,9 @@
 import React, { useState } from "react";
 import Typography from "@material-ui/core/Typography";
 import { List } from "@material-ui/core";
-import { Link } from "@material-ui/core";
 import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
 import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
 import useStyles from "./style";
-
-// import Gallery from "./gallery";
-// import "antd/dist/antd.css";
-// import { Carousel } from "antd";
 
 export default function ProjectItem({ project, number }) {
   const imagePath = process.env.PUBLIC_URL + "/assets/project-screenshots/";
@@ -47,14 +42,6 @@ export default function ProjectItem({ project, number }) {
       );
     }
     return dotList;
-  };
-
-  const contentStyle = {
-    width: "100%",
-    color: "#fff",
-    lineHeight: "160px",
-    textAlign: "center",
-    background: "#364d79",
   };
 
   return (
@@ -103,6 +90,7 @@ export default function ProjectItem({ project, number }) {
               moveCarousel(-1);
             }}
           />
+
           {project.photos[imgNum].url.split(".").reverse()[0] === "mp4" ? (
             <video
               autoPlay
@@ -116,7 +104,6 @@ export default function ProjectItem({ project, number }) {
                 src={imagePath + project.photos[imgNum].url}
                 type="video/mp4"
               />
-              {/* <img src={imagePath + project.photos[imgNum].url} /> */}
             </video>
           ) : (
             <img
