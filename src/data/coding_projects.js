@@ -1,5 +1,29 @@
 export const codeData = [
   {
+    title: "Tweet Streamer",
+    description: [
+      "Tweet Streamer is a web app displaying a live stream of about 1% of all tweets worldwide (~5 million tweets a day)!",
+      "Each tweet has been evaluated using a custom 'sentiment analyzer' that supports 10 languages and emojis! Each tweet's color corresponds to its sentiment score. (green: positive, red: negative, yellow: neutral)",
+      "Tweets are also aggregated and stored based on their location and displayed on a history map along with their count and average sentiment score.",
+      ,
+    ],
+    technologies: [
+      "Node.js",
+      "PostgreSQL",
+      "PostGIS",
+      "Sequelize",
+      "Twitter API",
+      "WebSockets",
+      "React",
+    ],
+    photos: [
+      { url: "live-map.mp4", title: "Live Stream of Worldwide Tweets" },
+      { url: "history-map.mp4", title: "Weekly History of Aggregated Tweets" },
+    ],
+    github: "https://github.com/kiana-h/twitt-stream-er",
+    live: "https://tweetstreamer.com",
+  },
+  {
     title: "Lake Hopper",
     description: [
       "I created Lake Hopper to record my backpacking trips. As an avid backpacker, I wanted a place where I could see all of my past trips and save all the routes, photos, and notes for every trip.",
@@ -27,30 +51,6 @@ export const codeData = [
     ],
     github: "https://github.com/kiana-h/lake-hopper",
     live: "https://lakehopper.io",
-  },
-  {
-    title: "Tweet Streamer",
-    description: [
-      "Tweet Streamer is a web app displaying a live stream of about 1% of all tweets worldwide (~5 million tweets a day)!",
-      "Each tweet has been evaluated using a custom 'sentiment analyzer' that supports 10 languages and emojis! Each tweet's color corresponds to its sentiment score. (green: positive, red: negative, yellow: neutral)",
-      "Tweets are also aggregated and stored based on their location and displayed on a history map along with their count and average sentiment score.",
-      ,
-    ],
-    technologies: [
-      "Node.js",
-      "PostgreSQL",
-      "PostGIS",
-      "Sequelize",
-      "Twitter API",
-      "WebSockets",
-      "React",
-    ],
-    photos: [
-      { url: "live-map.mp4", title: "Live Stream of Worldwide Tweets" },
-      { url: "history-map.mp4", title: "Weekly History of Aggregated Tweets" },
-    ],
-    github: "https://github.com/kiana-h/twitt-stream-er",
-    live: "https://tweetstreamer.com",
   },
   {
     title: "Covid Killer",
