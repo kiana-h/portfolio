@@ -3,6 +3,7 @@ import Typography from "@material-ui/core/Typography";
 import { List } from "@material-ui/core";
 import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
 import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
+import Slide from "react-reveal/Slide";
 import useStyles from "./style";
 
 export default function ProjectItem({ project, number }) {
@@ -46,89 +47,93 @@ export default function ProjectItem({ project, number }) {
 
   return (
     <div className={classes.projectItem}>
-      <div className={classes.projectTexts}>
-        <div className={classes.projectTitle}>
-          <Typography variant="h4">
-            0{number}: {project.title}
-          </Typography>
-          <Typography variant="body2">
-            <a className={classes.link} target="_blank" href={project.live}>
-              Live
-            </a>{" "}
-            |{" "}
-            <a className={classes.link} target="_blank" href={project.github}>
-              Github
-            </a>
-          </Typography>
-        </div>
-        <div>
-          <List className={classes.projectTechs}>
-            <Typography variant="body2" className={classes.bold}>
-              {project.technologies.join(", ")}
+      <Slide left>
+        <div className={classes.projectTexts}>
+          <div className={classes.projectTitle}>
+            <Typography variant="h4">
+              0{number}: {project.title}
             </Typography>
-          </List>
-          <List className={classes.projectDesc}>
-            {descriptionList(project.description)}
-          </List>
+            <Typography variant="body2">
+              <a className={classes.link} target="_blank" href={project.live}>
+                Live
+              </a>{" "}
+              |{" "}
+              <a className={classes.link} target="_blank" href={project.github}>
+                Github
+              </a>
+            </Typography>
+          </div>
+          <div>
+            <List className={classes.projectTechs}>
+              <Typography variant="body2" className={classes.bold}>
+                {project.technologies.join(", ")}
+              </Typography>
+            </List>
+            <List className={classes.projectDesc}>
+              {descriptionList(project.description)}
+            </List>
+          </div>
         </div>
-      </div>
-      <div
-        className={classes.photoContainer}
-        onMouseEnter={() => {
-          setVisibility(true);
-        }}
-        onMouseLeave={() => {
-          setVisibility(false);
-        }}
-      >
-        <div className={classes.imageArrows}>
-          <ArrowBackIosIcon
-            className={`${classes.arrow} ${
-              !visible || project.photos.length < 2 ? classes.hidden : ""
-            }`}
-            onClick={() => {
-              moveCarousel(-1);
-            }}
-          />
-
-          {project.photos[imgNum].url.split(".").reverse()[0] === "mp4" ? (
-            <video
-              autoPlay
-              loop
-              muted
-              playsInline
-              className={classes.projectPhoto}
-              key={project.title + imgNum}
-            >
-              <source
-                src={imagePath + project.photos[imgNum].url}
-                type="video/mp4"
-              />
-            </video>
-          ) : (
-            <img
-              className={classes.projectPhoto}
-              src={imagePath + project.photos[imgNum].url}
-            />
-          )}
-
-          <ArrowForwardIosIcon
-            className={`${classes.arrow} ${classes.rightArrow} ${
-              !visible || project.photos.length < 2 ? classes.hidden : ""
-            }`}
-            onClick={() => {
-              moveCarousel(1);
-            }}
-          />
-        </div>
-        <Typography
-          variant="subtitle1"
-          className={`${classes.photoTitle} ${visible ? "" : classes.hidden}`}
+      </Slide>
+      <Slide right>
+        <div
+          className={classes.photoContainer}
+          onMouseEnter={() => {
+            setVisibility(true);
+          }}
+          onMouseLeave={() => {
+            setVisibility(false);
+          }}
         >
-          {project.photos[imgNum].title}
-        </Typography>
-        <ul className={classes.dotContainer}>{dots()}</ul>
-      </div>
+          <div className={classes.imageArrows}>
+            <ArrowBackIosIcon
+              className={`${classes.arrow} ${
+                !visible || project.photos.length < 2 ? classes.hidden : ""
+              }`}
+              onClick={() => {
+                moveCarousel(-1);
+              }}
+            />
+
+            {project.photos[imgNum].url.split(".").reverse()[0] === "mp4" ? (
+              <video
+                autoPlay
+                loop
+                muted
+                playsInline
+                className={classes.projectPhoto}
+                key={project.title + imgNum}
+              >
+                <source
+                  src={imagePath + project.photos[imgNum].url}
+                  type="video/mp4"
+                />
+              </video>
+            ) : (
+              <img
+                className={classes.projectPhoto}
+                src={imagePath + project.photos[imgNum].url}
+              />
+            )}
+
+            <ArrowForwardIosIcon
+              className={`${classes.arrow} ${classes.rightArrow} ${
+                !visible || project.photos.length < 2 ? classes.hidden : ""
+              }`}
+              onClick={() => {
+                moveCarousel(1);
+              }}
+            />
+          </div>
+          <Typography
+            variant="subtitle1"
+            className={`${classes.photoTitle} ${visible ? "" : classes.hidden}`}
+          >
+            {project.photos[imgNum].title}
+          </Typography>
+          <ul className={classes.dotContainer}>{dots()}</ul>
+        </div>
+      </Slide>
     </div>
   );
 }
