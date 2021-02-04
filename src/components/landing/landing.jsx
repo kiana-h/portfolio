@@ -15,13 +15,13 @@ export default function Landing() {
       <Typography className={classes.typist}>
         <Typist>
           <span>an architect</span>
-          <Typist.Backspace count={9} delay={750} />
+          <Typist.Backspace count={9} delay={500} />
           <span> engineer</span>
-          <Typist.Backspace count={11} delay={750} />
+          <Typist.Backspace count={11} delay={500} />
           <span> designer</span>
-          <Typist.Backspace count={9} delay={750} />
+          <Typist.Backspace count={9} delay={500} />
           <span> developer</span>
-          <Typist.Backspace count={9} delay={750} />
+          <Typist.Backspace count={9} delay={500} />
           <span> builder,</span>
         </Typist>
       </Typography>
