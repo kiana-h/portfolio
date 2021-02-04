@@ -1,7 +1,5 @@
 import React from "react";
-import Typography from "@material-ui/core/Typography";
 import { List } from "@material-ui/core";
-import { Link } from "@material-ui/core";
 import { codeData } from "../../data/coding_projects";
 import ProjectItem from "./project_item";
 import useStyles from "./style";

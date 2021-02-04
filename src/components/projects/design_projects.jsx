@@ -1,13 +1,11 @@
 import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import { Link } from "react-router-dom";
 import GridList from "@material-ui/core/GridList";
 import GridListTile from "@material-ui/core/GridListTile";
 import GridListTileBar from "@material-ui/core/GridListTileBar";
-import Fade from "@material-ui/core/Collapse";
-import ListSubheader from "@material-ui/core/ListSubheader";
 import IconButton from "@material-ui/core/IconButton";
 import InfoIcon from "@material-ui/icons/Info";
+import Slide from "react-reveal/Slide";
 
 import theme from "../theme/theme";
 import Modal from "./modal/modal";
@@ -88,7 +86,6 @@ export default function DesignProjects({ section }) {
                 title={tile.title}
                 subtitle={<span> {tile.subtitle}</span>}
                 actionIcon={
-                  // <Modal tile={tile} />
                   <IconButton
                     aria-label={`info about ${tile.title}`}
                     className={classes.icon}
