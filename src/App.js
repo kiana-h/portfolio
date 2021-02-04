@@ -17,7 +17,7 @@ function App() {
         <Menu />
       </header>
       <Landing />
-      {/* <About section="#about" /> */}
+      <About section="#about" />
       <CodeProjects />
       <DesignProjects section="#design" />
       <Contact section="#contact" />
