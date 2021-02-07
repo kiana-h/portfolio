@@ -13,7 +13,7 @@ export default function About({ section }) {
     "I have a master's degree from Yale and a bachelor's degree from University of Tehran.",
     "Python is my favorite programming language.",
     "I design and develop fullstack applications.",
-    "Leetcode stats: 203 problems as of today.",
+    "Leetcode stats: 150 problems as of today.",
     "I'm a licensed architect in California.",
     "My happy place: highway 1 on my motorcycle. Or in a tent in the Sierra backcountry.",
   ];
@@ -22,6 +22,7 @@ export default function About({ section }) {
       return <Typography variant="body2">- {val}</Typography>;
     });
   };
+
   return (
     <div>
       <div className="border" id={section}></div>
