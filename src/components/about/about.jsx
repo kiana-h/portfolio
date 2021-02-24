@@ -35,7 +35,7 @@ export default function About({ section }) {
         </Slide>
         <Slide right>
           <div className={classes.myInfo}>
-            <p>Not-So-Random Facts:</p>
+            {/* <p>Not-So-Random Facts:</p> */}
             <List>{myBio()}</List>
           </div>
         </Slide>
