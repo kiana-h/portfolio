@@ -53,19 +53,44 @@ export default function ProjectItem({ project, number }) {
             <Typography variant="h4">
               0{number}: {project.title}
             </Typography>
-            <Typography variant="body2">
-              <a className={classes.link} target="_blank" href={project.live}>
-                Live
-              </a>{" "}
-              |{" "}
-              <a className={classes.link} target="_blank" href={project.github}>
-                Github
-              </a>
+            {project.type === "Personal Project" ? (
+              <Typography variant="body2">
+                <a className={classes.link} target="_blank" href={project.live}>
+                  Live
+                </a>{" "}
+                |{" "}
+                <a
+                  className={classes.link}
+                  target="_blank"
+                  href={project.github}
+                >
+                  Github
+                </a>
+              </Typography>
+            ) : (
+              <Typography variant="body2">
+                <a
+                  className={classes.link}
+                  target="_blank"
+                  href={project.website}
+                >
+                  Website
+                </a>{" "}
+              </Typography>
+            )}
+          </div>
+
+          <div style={{ display: "flex" }}>
+            <Typography variant="body1" className={classes.role}>
+              {project.type}
+            </Typography>
+            <Typography variant="body1" className={classes.role}>
+              {project.timeline}
             </Typography>
           </div>
           <div>
             <List className={classes.projectTechs}>
-              <Typography variant="body2" className={classes.bold}>
+              <Typography variant="body2" className={classes.tech}>
                 {project.technologies.join(", ")}
               </Typography>
             </List>

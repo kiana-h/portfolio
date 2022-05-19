@@ -5,24 +5,75 @@ import Typography from "@material-ui/core/Typography";
 import { List } from "@material-ui/core";
 import { Link } from "@material-ui/core";
 import Typist from "react-typist";
+import { useSpring, animated, config } from "react-spring";
 
 import useStyles from "./style";
 
 export default function Landing() {
   const classes = useStyles();
+  const [underline, setUnderline] = React.useState(false);
+
+  const props = useSpring({
+    delay: 300,
+    config: config.molasses,
+    from: {
+      textDecoration: "none",
+      height: "0.2rem",
+      position: "absolute",
+      bottom: 0,
+    },
+    to: {
+      opacity: underline ? "1" : "0",
+      width: underline ? "100%" : "0%",
+      backgroundColor: underline ? "#00c1d1" : "#f50157",
+      height: "0.2rem",
+      position: "absolute",
+      bottom: "-0.3rem",
+    },
+  });
+  const props2 = useSpring({
+    delay: 300,
+    config: config.molasses,
+    fontWeight: 500,
+    from: {
+      color: "black",
+      fontWeight: 300,
+      // fontWeight: 200,
+    },
+    to: {
+      color: underline ? "#00c1d1" : "black",
+      fontWeight: 300,
+
+      // fontWeight: underline ? 400 : 200,
+    },
+  });
+
   const noun = () => {
     return (
       <Typography className={classes.typist}>
-        <Typist>
-          <span>an architect</span>
-          <Typist.Backspace count={9} delay={500} />
-          <span> engineer</span>
-          <Typist.Backspace count={11} delay={500} />
-          <span> designer</span>
-          <Typist.Backspace count={9} delay={500} />
-          <span> developer</span>
-          <Typist.Backspace count={9} delay={500} />
-          <span> builder,</span>
+        <Typist
+          onTypingDone={() => {
+            setUnderline(true);
+          }}
+        >
+          {" "}
+          <span style={{ marginRight: ".5rem" }}>a </span>
+          <a
+            style={{ textDecoration: "none", position: "relative" }}
+            href="/#code"
+          >
+            <animated.div style={props2}>software engineer</animated.div>
+            <animated.div style={props}></animated.div>
+          </a>
+          <span style={{ margin: "0 .5rem" }}>& </span>
+          <a
+            style={{ textDecoration: "none", position: "relative" }}
+            href="/#design"
+          >
+            <animated.div style={props2}>architect</animated.div>
+            <animated.div style={props}></animated.div>
+          </a>
+          <span style={{ margin: "0 0.1rem" }}> </span>
         </Typist>
       </Typography>
     );

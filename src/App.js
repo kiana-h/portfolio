@@ -1,4 +1,3 @@
-import logo from "./logo.svg";
 import "./App.css";
 import { Route, Switch } from "react-router";
 import ScrollHandler from "./components/helper/scroll-handler";
@@ -8,6 +7,7 @@ import About from "./components/about/about";
 import Contact from "./components/contact/contact";
 import CodeProjects from "./components/projects/code_projects";
 import DesignProjects from "./components/projects/design_projects";
+import { Typography } from "@material-ui/core";
 
 function App() {
   return (

@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
   projectTechs: {
     display: "flex",
     flexDirection: "row",
-    marginBottom: theme.spacing(3),
+    marginBottom: theme.spacing(1),
   },
   projectTitle: {
     display: "flex",
@@ -95,7 +95,6 @@ const useStyles = makeStyles((theme) => ({
   },
   arrow: {
     color: "grey",
-    // backgroundColor: "red",
     "&:hover": {
       cursor: "pointer",
     },
@@ -103,9 +102,18 @@ const useStyles = makeStyles((theme) => ({
   rightArrow: {
     paddingLeft: "5px",
   },
-  bold: {
+  tech: {
     fontWeight: "500",
     fontSize: "13px",
+  },
+  role: {
+    fontWeight: "500",
+    fontSize: "13px",
+    borderRadius: "3px",
+    padding: "2px 8px",
+    color: "#04828a",
+    marginRight: ".5rem",
+    backgroundColor: "rgba(4,130,138,.1)",
   },
 }));
 

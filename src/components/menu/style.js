@@ -27,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
   },
   toolbar: {
     display: "flex",
-    alignItems: "flex-end",
+    alignItems: "center",
     justifyContent: "space-between",
   },
   links: {
@@ -56,8 +56,9 @@ const useStyles = makeStyles((theme) => ({
   },
   pageTitle: {
     color: "black",
-    fontWeight: "600",
-    textShadow: "2px 0px #16becf",
+    fontWeight: "300",
+    // textShadow: "2px 0px #16becf",
+    // textShadow: "-2px 0p x #f50157",
   },
 }));
 

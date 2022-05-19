@@ -15,16 +15,33 @@ export default function Menu() {
       <AppBar position="static" className={classes.appbar}>
         <Toolbar className={classes.toolbar}>
           <Link to="/" className={classes.linkItem}>
-            <Typography className={classes.pageTitle} variant="h4">
-              KH
-            </Typography>
+            <img
+              src="../../Logo_K.png"
+              style={{
+                width: "3rem",
+                position: "absolute",
+                left: "1.35rem",
+              }}
+            />
+            <img
+              src="../../Logo_K.png"
+              style={{
+                width: "3rem",
+                filter: "grayscale(100%) brightness(0%) contrast(100%)",
+              }}
+            />
           </Link>
           <List className={classes.links}>
-            {/* <Link to="/#about" className={classes.linkItem}>
+            <Link to="/" className={classes.linkItem}>
+              <Typography variant={linkType} className={classes.title}>
+                Home
+              </Typography>
+            </Link>
+            <Link to="/#about" className={classes.linkItem}>
               <Typography variant={linkType} className={classes.title}>
                 About
               </Typography>
-            </Link> */}
+            </Link>
             <Link to="/#code" className={classes.linkItem}>
               <Typography variant={linkType} className={classes.title}>
                 Code

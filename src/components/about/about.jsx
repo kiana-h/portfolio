@@ -8,13 +8,12 @@ import useStyles from "./style";
 export default function About({ section }) {
   const classes = useStyles();
   const bioInfo = [
-    "I grew up in Iran. I left after college.",
-    "I have a background in mathematics/physics (ranked 99.999 percentile in the National Mathematics Exam in Iran among 300,000 participants).",
-    "I have a master's degree from Yale and a bachelor's degree from University of Tehran.",
+    "I grew up in Iran and moved to the US after college.",
+    "I have a master's degree in architecture from Yale and a bachelor's degree from University of Tehran.",
     "Python is my favorite programming language.",
     "I design and develop fullstack applications.",
-    "Leetcode stats: 170 problems as of today.",
-    "I'm a licensed architect in California.",
+    "Leetcode stats: 331 problems solved as of today.",
+    "I'm a licensed architect in California. I've designed everything from furniture and single-family houses, to office campuses, schools, and hospitals",
     "My happy place: highway 1 on my motorcycle. Or in a tent in the Sierra backcountry.",
   ];
   const myBio = () => {

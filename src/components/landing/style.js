@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
   blurb: {
     display: "flex",
     flexDirection: "column",
-    width: "800px",
+    width: "720px",
     margin: "200px auto",
     marginBottom: "400px",
   },
@@ -26,11 +26,14 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
   },
   typist: {
-    display: "inline",
+    display: "flex",
     marginLeft: theme.spacing(1),
     marginRight: "0",
     fontSize: "30px",
     fontWeight: "200",
+    "& .Typist": {
+      display: "flex",
+    },
   },
   boldTitle: {
     margin: "0",
