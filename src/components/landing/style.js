@@ -18,8 +18,8 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     flexDirection: "column",
     width: "720px",
-    margin: "200px auto",
-    marginBottom: "400px",
+    margin: "30vh auto",
+    // marginBottom: "400px",
   },
 
   textContainer: {

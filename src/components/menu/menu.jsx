@@ -32,29 +32,19 @@ export default function Menu() {
             />
           </Link>
           <List className={classes.links}>
-            <Link to="/" className={classes.linkItem}>
-              <Typography variant={linkType} className={classes.title}>
-                Home
-              </Typography>
-            </Link>
-            <Link to="/#about" className={classes.linkItem}>
-              <Typography variant={linkType} className={classes.title}>
-                About
-              </Typography>
-            </Link>
-            <Link to="/#code" className={classes.linkItem}>
+            <Link to="/code" className={classes.linkItem}>
               <Typography variant={linkType} className={classes.title}>
                 Code
               </Typography>
             </Link>
-            <Link to="/#design" className={classes.linkItem}>
+            <Link to="/design" className={classes.linkItem}>
               <Typography variant={linkType} className={classes.title}>
                 Design
               </Typography>
             </Link>
-            <Link to="/#contact" className={classes.linkItem}>
+            <Link to="/about" className={classes.linkItem}>
               <Typography variant={linkType} className={classes.title}>
-                Contact
+                About
               </Typography>
             </Link>
             <a

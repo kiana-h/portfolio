@@ -18,7 +18,7 @@ export default function Contact({ section }) {
   return (
     <div className={classes.root} id={section}>
       <div className={classes.contactInfo}>
-        <Typography>Find me on</Typography>
+        Find me on
         <div className={classes.socialIcons}>
           <a target="_blank" href="https://www.linkedin.com/in/kiana-hosseini/">
             <LinkedInIcon className={classes.icon} />
@@ -38,7 +38,7 @@ export default function Contact({ section }) {
             <InstagramIcon className={classes.icon} />
           </a>
         </div>
-        <Typography>or send me an </Typography>
+        or send me an
         <a
           target="_blank"
           href={`mailto:${email}`}
@@ -47,7 +47,6 @@ export default function Contact({ section }) {
           <EmailOutlinedIcon />
         </a>
       </div>
-      <footer></footer>
     </div>
   );
 }

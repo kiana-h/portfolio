@@ -22,7 +22,8 @@ const useStyles = makeStyles((theme) => ({
     borderTop: "1px solid",
     borderColor: "rgba(120,120,120,.5)",
     margin: "0 auto",
-    padding: "150px 0",
+    overflow: "hidden",
+    paddingTop: `calc((100vh - 700px) / 2)`,
   },
 
   icon: {
@@ -61,49 +62,51 @@ export default function DesignProjects({ section }) {
 
   return (
     <div className={classes.root} id={section}>
-      <GridList cellHeight={240} cols={3} className={classes.gridList}>
-        <GridListTile
-          key="Subheader"
-          cols={3}
-          style={{ height: "auto" }}
-        ></GridListTile>
-        {tileData.map((tile, i) => (
+      <Slide top>
+        <GridList cellHeight={240} cols={3} className={classes.gridList}>
           <GridListTile
-            key={`tile-${i}`}
-            onMouseEnter={() => handleHover(tile.code)}
-            onMouseLeave={handleHoverEnd}
-            className={classes.gridImg}
-          >
-            <img
-              src={imagePath + tile.code + "/" + tile.code + "1" + ".png"}
-              alt={tile.title}
-              onClick={() => handleOpen(tile.code)}
-            />
-
-            {hoverId === tile.code && (
-              <GridListTileBar
-                className={classes.tilebar}
-                title={tile.title}
-                subtitle={<span> {tile.subtitle}</span>}
-                actionIcon={
-                  <IconButton
-                    aria-label={`info about ${tile.title}`}
-                    className={classes.icon}
-                    onClick={() => handleOpen(tile.code)}
-                  >
-                    <InfoIcon />
-                  </IconButton>
-                }
+            key="Subheader"
+            cols={3}
+            style={{ height: "auto" }}
+          ></GridListTile>
+          {tileData.map((tile, i) => (
+            <GridListTile
+              key={`tile-${i}`}
+              onMouseEnter={() => handleHover(tile.code)}
+              onMouseLeave={handleHoverEnd}
+              className={classes.gridImg}
+            >
+              <img
+                src={imagePath + tile.code + "/" + tile.code + "1" + ".png"}
+                alt={tile.title}
+                onClick={() => handleOpen(tile.code)}
               />
-            )}
-            <Modal
-              tile={tile}
-              close={handleClose}
-              open={openId === tile.code}
-            />
-          </GridListTile>
-        ))}
-      </GridList>
+
+              {hoverId === tile.code && (
+                <GridListTileBar
+                  className={classes.tilebar}
+                  title={tile.title}
+                  subtitle={<span> {tile.subtitle}</span>}
+                  actionIcon={
+                    <IconButton
+                      aria-label={`info about ${tile.title}`}
+                      className={classes.icon}
+                      onClick={() => handleOpen(tile.code)}
+                    >
+                      <InfoIcon />
+                    </IconButton>
+                  }
+                />
+              )}
+              <Modal
+                tile={tile}
+                close={handleClose}
+                open={openId === tile.code}
+              />
+            </GridListTile>
+          ))}
+        </GridList>
+      </Slide>
     </div>
   );
 }

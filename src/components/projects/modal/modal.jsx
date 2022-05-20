@@ -112,10 +112,6 @@ const CustomizedDialogs = withStyles(styles)((props) => {
     setHoverId(i);
   };
 
-  // const handleHoverEnd = () => {
-  //   setHoverId(0);
-  // };
-
   const description = (description) => {
     return description.map((paragraph, i) => {
       return (
@@ -171,7 +167,6 @@ const CustomizedDialogs = withStyles(styles)((props) => {
 
   const photoGallery = (code, count, videos) => {
     const thumbs = getThumbs(code, count, videos);
-    // return tile.video && hoverId in tile.video ? </> : </>
     return (
       <div>
         <div className={classes.modalImageContainer}>

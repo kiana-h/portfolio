@@ -25,7 +25,7 @@ export default function Landing() {
     to: {
       opacity: underline ? "1" : "0",
       width: underline ? "100%" : "0%",
-      backgroundColor: underline ? "#00c1d1" : "#f50157",
+      backgroundColor: underline ? "#00A6D4" : "#f50157",
       height: "0.2rem",
       position: "absolute",
       bottom: "-0.3rem",
@@ -38,13 +38,10 @@ export default function Landing() {
     from: {
       color: "black",
       fontWeight: 300,
-      // fontWeight: 200,
     },
     to: {
-      color: underline ? "#00c1d1" : "black",
+      color: underline ? "#00A6D4" : "black",
       fontWeight: 300,
-
-      // fontWeight: underline ? 400 : 200,
     },
   });
 
@@ -60,7 +57,7 @@ export default function Landing() {
           <span style={{ marginRight: ".5rem" }}>a </span>
           <a
             style={{ textDecoration: "none", position: "relative" }}
-            href="/#code"
+            href="/code"
           >
             <animated.div style={props2}>software engineer</animated.div>
             <animated.div style={props}></animated.div>
@@ -68,7 +65,7 @@ export default function Landing() {
           <span style={{ margin: "0 .5rem" }}>& </span>
           <a
             style={{ textDecoration: "none", position: "relative" }}
-            href="/#design"
+            href="/design"
           >
             <animated.div style={props2}>architect</animated.div>
             <animated.div style={props}></animated.div>

@@ -1,9 +1,10 @@
 import React from "react";
 import Typography from "@material-ui/core/Typography";
 import { List } from "@material-ui/core";
-import Slide from "react-reveal/Slide";
+import Fade from "react-reveal/Fade";
 
 import useStyles from "./style";
+import Contact from "../contact/contact";
 
 export default function About({ section }) {
   const classes = useStyles();
@@ -24,21 +25,19 @@ export default function About({ section }) {
 
   return (
     <div>
-      <div className="border" id={section}></div>
-      <div className={classes.about}>
-        <Slide left>
+      <Fade>
+        <div className={classes.about}>
           <img
             className={classes.myPhoto}
             src={process.env.PUBLIC_URL + "/assets/resume/profile.png"}
           ></img>
-        </Slide>
-        <Slide right>
+
           <div className={classes.myInfo}>
-            {/* <p>Not-So-Random Facts:</p> */}
             <List>{myBio()}</List>
+            <Contact />
           </div>
-        </Slide>
-      </div>
+        </div>
+      </Fade>
     </div>
   );
 }
