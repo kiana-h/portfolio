@@ -46,8 +46,10 @@ const useStyles = makeStyles((theme) => ({
     marginRight: "100px",
   },
   projectPhoto: {
+    borderRadius: "5px",
     width: "550px",
     height: "317px",
+    boxShadow: "0 1px 1px rgba(0,0,0,0.1), 0 2px 2px rgba(0,0,0,0.1)",
   },
   photoTitle: {
     width: "550px",

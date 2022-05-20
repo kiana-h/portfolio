@@ -1,28 +1,33 @@
 export const codeData = [
-  // {
-  //   title: "Replica",
-  //   type: "Professional Work",
+  {
+    title: "Replica",
+    type: "Professional Work",
 
-  //   description: [
-  //     "Replica is a spin-off of Google’s Sidewalk Labs and provides a data platfrom for urban planners. Replica models data about the built environment, population, and how people move around and interact with their cities (i.e. a digital 'replica' of a city).",
-  //     "As a software engineer on the Application team, I develop the interface and infrastructure for users to access and analyze data.",
-  //   ],
-  //   technologies: [
-  //     "Node.js",
-  //     "TypeScript",
-  //     "PostgreSQL",
-  //     "React",
-  //     "Redux",
-  //     "MapBox",
-  //     "Material UI",
-  //   ],
-  //   photos: [
-  //     { url: "live-map.mp4", title: "Live Stream of Worldwide Tweets" },
-  //     { url: "history-map.mp4", title: "Weekly History of Aggregated Tweets" },
-  //   ],
-  //   website: "https://replicahq.com/",
-  //   timeline: "2021 - Present",
-  // },
+    description: [
+      "Replica is a spin-off of Google’s Sidewalk Labs and provides a data platfrom for urban planners. Replica models data about the built environment, population, and how people move around and interact with their cities (i.e. a digital 'replica' of a city).",
+      "As a software engineer on the Application team, I develop the interface and infrastructure for users to access and analyze data.",
+    ],
+    technologies: [
+      "Node.js",
+      "TypeScript",
+      "PostgreSQL",
+      "React",
+      "Redux",
+      "MapBox",
+      "Material UI",
+    ],
+    photos: [
+      { url: "trips.png", title: "SF Mobility Data Visualization" },
+      { url: "dataset.png", title: "Trips Data Preview" },
+      { url: "networks.png", title: "Seasonal Traffic Distribution" },
+      { url: "trends.png", title: "Weekly Trends Analyzer" },
+      { url: "landuse.png", title: "SF Bay Area Land Use Map" },
+      { url: "uploads.png", title: "Data Uploads Portal" },
+      { url: "transit.png", title: "NYC Public Transit Routes" },
+    ],
+    website: "https://replicahq.com/",
+    timeline: "2021 - Present",
+  },
   {
     title: "Tweet Streamer",
     type: "Personal Project",
