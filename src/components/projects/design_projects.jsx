@@ -22,7 +22,6 @@ const useStyles = makeStyles((theme) => ({
     borderTop: "1px solid",
     borderColor: "rgba(120,120,120,.5)",
     margin: "0 auto",
-    overflow: "hidden",
     paddingTop: `calc((100vh - 700px) / 2)`,
   },
 

@@ -4,10 +4,6 @@ export const designData = [
     code: "wrns",
     description: [
       "At WRNS, I worked on a variety of tech and educational campus projects: Castilleja School in Palo Alto, Zions Technology Center in Utah, an office campus in Santa Rosa, and a theater for Sonoma Academy. I worked on schematic design through 100% construction documents.",
-      // "Castilleja is a high school and middle school in Palo Alto and one of the top schools in the country. The school is planning on demolishing its exisiting outdated buildings and developing a modern campus with the highest sustainablity standards.",
-      // "The new Castilleja rethinks traditional learning spaces ",
-      // "I worked on the project through its entire design phase (1 year) which included conceptual design, exterior design and interior architectural design and visualization, code analysis, calculation and spatial optimization of the program.",
-      // "The project is still ongoing and was recently approved by Palo Alto Architectural Review Board.",
     ],
     subtitle: "WRNS Studio: 2018 - Present",
   },

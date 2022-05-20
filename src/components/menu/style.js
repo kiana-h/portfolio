@@ -57,8 +57,6 @@ const useStyles = makeStyles((theme) => ({
   pageTitle: {
     color: "black",
     fontWeight: "300",
-    // textShadow: "2px 0px #16becf",
-    // textShadow: "-2px 0p x #f50157",
   },
 }));
 

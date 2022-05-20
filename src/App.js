@@ -5,8 +5,7 @@ import About from "./components/about/about";
 import Contact from "./components/contact/contact";
 import CodeProjects from "./components/projects/code_projects";
 import DesignProjects from "./components/projects/design_projects";
-import { Typography } from "@material-ui/core";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
 function App() {
   return (

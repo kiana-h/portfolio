@@ -19,7 +19,6 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: "column",
     width: "720px",
     margin: "30vh auto",
-    // marginBottom: "400px",
   },
 
   textContainer: {

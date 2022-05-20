@@ -22,6 +22,7 @@ export default function Menu() {
                 position: "absolute",
                 left: "1.35rem",
               }}
+              alt="logo"
             />
             <img
               src="../../Logo_K.png"
@@ -29,6 +30,7 @@ export default function Menu() {
                 width: "3rem",
                 filter: "grayscale(100%) brightness(0%) contrast(100%)",
               }}
+              alt="logo"
             />
           </Link>
           <List className={classes.links}>
@@ -54,6 +56,7 @@ export default function Menu() {
                 "/assets/resume/Kiana_Hosseini_Resume.pdf"
               }
               className={classes.linkItem}
+              rel="noreferrer"
             >
               <Typography variant={linkType} className={classes.title}>
                 <Button className={classes.resume} variant="outlined">

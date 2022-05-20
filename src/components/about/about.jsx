@@ -30,6 +30,7 @@ export default function About({ section }) {
           <img
             className={classes.myPhoto}
             src={process.env.PUBLIC_URL + "/assets/resume/profile.png"}
+            alt="profile"
           ></img>
 
           <div className={classes.myInfo}>

@@ -63,6 +63,7 @@ export default function ProjectItem({ project, number }) {
                   className={classes.link}
                   target="_blank"
                   href={project.github}
+                  rel="noreferrer"
                 >
                   Github
                 </a>
@@ -73,6 +74,7 @@ export default function ProjectItem({ project, number }) {
                   className={classes.link}
                   target="_blank"
                   href={project.website}
+                  rel="noreferrer"
                 >
                   Website
                 </a>{" "}
@@ -138,6 +140,7 @@ export default function ProjectItem({ project, number }) {
               <img
                 className={classes.projectPhoto}
                 src={imagePath + project.photos[imgNum].url}
+                alt="project"
               />
             )}
 

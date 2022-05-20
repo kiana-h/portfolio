@@ -30,7 +30,6 @@ export const codeData = [
       "Tweet Streamer is a web app displaying a live stream of about 1% of all tweets worldwide (~5 million tweets a day)!",
       "Each tweet has been evaluated using a custom 'sentiment analyzer' that supports 10 languages and emojis! Each tweet's color corresponds to its sentiment score. (green: positive, red: negative, yellow: neutral)",
       "Tweets are also aggregated and stored based on their location and displayed on a history map along with their count and average sentiment score.",
-      ,
     ],
     technologies: [
       "Node.js",

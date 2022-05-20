@@ -1,17 +1,10 @@
 import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import { Link } from "react-router-dom";
-import GridList from "@material-ui/core/GridList";
 import GridListTile from "@material-ui/core/GridListTile";
 import GridListTileBar from "@material-ui/core/GridListTileBar";
-import Fade from "@material-ui/core/Collapse";
-import ListSubheader from "@material-ui/core/ListSubheader";
-import IconButton from "@material-ui/core/IconButton";
-import InfoIcon from "@material-ui/icons/Info";
 
 import theme from "../theme/theme";
 import Modal from "./modal/modal";
-import { designData } from "../../data/design_projects";
 const imagePath = process.env.PUBLIC_URL + "/assets/design/";
 
 const useStyles = makeStyles((theme) => ({
