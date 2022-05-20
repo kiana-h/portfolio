@@ -3,6 +3,7 @@ import Typography from "@material-ui/core/Typography";
 import { List } from "@material-ui/core";
 import Typist from "react-typist";
 import { useSpring, animated, config } from "react-spring";
+import { Link } from "react-router-dom";
 
 import useStyles from "./style";
 
@@ -52,21 +53,21 @@ export default function Landing() {
         >
           {" "}
           <span style={{ marginRight: ".5rem" }}>a </span>
-          <a
+          <Link
             style={{ textDecoration: "none", position: "relative" }}
-            href="/code"
+            to="/code"
           >
             <animated.div style={props2}>software engineer</animated.div>
             <animated.div style={props}></animated.div>
-          </a>
+          </Link>
           <span style={{ margin: "0 .5rem" }}>& </span>
-          <a
+          <Link
             style={{ textDecoration: "none", position: "relative" }}
-            href="/design"
+            to="/design"
           >
             <animated.div style={props2}>architect</animated.div>
             <animated.div style={props}></animated.div>
-          </a>
+          </Link>
           <span style={{ margin: "0 0.1rem" }}> </span>
         </Typist>
       </Typography>
@@ -91,7 +92,6 @@ export default function Landing() {
           I make things in the digital and physical world.
         </Typography>
       </List>
-      {/* <div className={classes.border}></div> */}
     </div>
   );
 }
