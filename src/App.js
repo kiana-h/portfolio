@@ -15,11 +15,11 @@ function App() {
       </header>
 
       <Routes>
-        <Route path="/" element={<Landing />} />
         <Route path="about" element={<About />} />
         <Route path="code" element={<CodeProjects />} />
         <Route path="design" element={<DesignProjects />} />
         <Route path="contact" element={<Contact />} />
+        <Route path="/*" element={<Landing />} />
       </Routes>
     </div>
   );
