@@ -40,18 +40,18 @@ const useStyles = makeStyles((theme) => ({
     "&:hover": {
       cursor: "pointer",
       textDecoration: "none",
-      color: "#16becf",
+      color: "#00A6D4",
     },
   },
   resume: {
     fontSize: ".75rem",
-    borderColor: "#16becf",
-    color: "#16becf",
+    borderColor: "#00A6D4",
+    color: "#00A6D4",
     fontWeight: "700",
     "&:hover": {
       color: "white",
       fontWeight: "600",
-      backgroundColor: "#16becf",
+      backgroundColor: "#00A6D4",
     },
   },
   pageTitle: {

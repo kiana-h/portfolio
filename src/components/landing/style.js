@@ -40,6 +40,9 @@ const useStyles = makeStyles((theme) => ({
     padding: "0",
     fontSize: "30px",
     fontWeight: "300",
+    "& a": {
+      textDecoration: "none",
+    },
   },
 }));
 

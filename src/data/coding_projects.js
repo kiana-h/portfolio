@@ -4,8 +4,8 @@ export const codeData = [
     type: "Professional Work",
 
     description: [
-      "Replica is a spin-off of Google’s Sidewalk Labs and provides a data platfrom for urban planners. Replica models data about the built environment, population, and how people move around and interact with their cities (i.e. a digital 'replica' of a city).",
-      "As a software engineer on the Application team, I develop the interface and infrastructure for users to access and analyze data.",
+      "Replica, formerly part of Alphabet's Sidewalk Labs, is a data platform for urban planners.",
+      "As a software engineer on the Application team, I develop the infrastructure and interfaces for users to access and analyze geospatial data about urban ecosystems.",
     ],
     technologies: [
       "Node.js",
@@ -18,9 +18,9 @@ export const codeData = [
     ],
     photos: [
       { url: "trips.png", title: "SF Mobility Data Visualization" },
-      { url: "dataset.png", title: "Trips Data Preview" },
-      { url: "networks.png", title: "Seasonal Traffic Distribution" },
       { url: "trends.png", title: "Weekly Trends Analyzer" },
+      { url: "dataset.png", title: "Trip Data Preview" },
+      { url: "networks.png", title: "Seasonal Traffic Distribution" },
       { url: "landuse.png", title: "SF Bay Area Land Use Map" },
       { url: "uploads.png", title: "Data Uploads Portal" },
       { url: "transit.png", title: "NYC Public Transit Routes" },
@@ -72,13 +72,13 @@ export const codeData = [
     ],
     photos: [
       { url: "draw_video_notab.mp4", title: "Creating Custom Routes" },
-      { url: "landing.png", title: "Landing Page" },
       { url: "trip_show.mp4", title: "Trip Display" },
       { url: "trip_index.mp4", title: "Trip Index" },
       {
         url: "upload_video.mp4",
         title: "Uploading Files From Smartwatch",
       },
+      { url: "landing.png", title: "Landing Page" },
     ],
     github: "https://github.com/kiana-h/lake-hopper",
     live: "https://lakehopper.io",

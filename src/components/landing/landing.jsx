@@ -11,8 +11,8 @@ export default function Landing() {
   const classes = useStyles();
   const [underline, setUnderline] = React.useState(false);
 
-  const props = useSpring({
-    delay: 300,
+  const underlineProps = useSpring({
+    delay: 50,
     config: config.molasses,
     from: {
       textDecoration: "none",
@@ -29,8 +29,8 @@ export default function Landing() {
       bottom: "-0.3rem",
     },
   });
-  const props2 = useSpring({
-    delay: 300,
+  const colorProps = useSpring({
+    delay: 50,
     config: config.molasses,
     fontWeight: 500,
     from: {
@@ -43,30 +43,30 @@ export default function Landing() {
     },
   });
 
-  const noun = () => {
+  const typedText = () => {
     return (
       <Typography className={classes.typist}>
         <Typist
+          avgTypingDelay={50}
           onTypingDone={() => {
             setUnderline(true);
           }}
         >
           {" "}
-          <span style={{ marginRight: ".5rem" }}>a </span>
           <Link
             style={{ textDecoration: "none", position: "relative" }}
             to="/code"
           >
-            <animated.div style={props2}>software engineer</animated.div>
-            <animated.div style={props}></animated.div>
+            <animated.div style={colorProps}>software engineer</animated.div>
+            <animated.div style={underlineProps}></animated.div>
           </Link>
           <span style={{ margin: "0 .5rem" }}>& </span>
           <Link
             style={{ textDecoration: "none", position: "relative" }}
             to="/design"
           >
-            <animated.div style={props2}>architect</animated.div>
-            <animated.div style={props}></animated.div>
+            <animated.div style={colorProps}>architect</animated.div>
+            <animated.div style={underlineProps}></animated.div>
           </Link>
           <span style={{ margin: "0 0.1rem" }}> </span>
         </Typist>
@@ -76,14 +76,19 @@ export default function Landing() {
   return (
     <div className={classes.root}>
       <List className={classes.blurb}>
-        <Typography className={classes.title}>Hello.</Typography>
+        <Typography className={classes.title}>Hello!</Typography>
         <div className={classes.textContainer}>
           <Typography className={classes.title}>My name is </Typography>
-          <Typography className={classes.boldTitle}>Kiana Hosseini.</Typography>
+          <Typography className={classes.boldTitle}>
+            <span>
+              <Link to="/about">Kiana Hosseini</Link>
+            </span>
+            .
+          </Typography>
         </div>
         <div className={classes.textContainer}>
-          <Typography className={classes.title}>I am </Typography>
-          {noun()}
+          <Typography className={classes.title}>I am a</Typography>
+          {typedText()}
         </div>
         <Typography className={classes.title}>
           based in San Francisco.

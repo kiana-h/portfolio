@@ -3,7 +3,6 @@ import { makeStyles } from "@material-ui/core/styles";
 const useStyles = makeStyles((theme) => ({
   root: {
     marginTop: "1rem",
-    marginLeft: "1rem",
   },
   contactInfo: {
     display: "flex",
@@ -12,11 +11,11 @@ const useStyles = makeStyles((theme) => ({
   },
   email: {
     fontSize: ".75rem",
-    borderColor: "#16becf",
+    borderColor: "#00A6D4",
     "&:hover": {
       color: "white",
       fontWeight: "600",
-      backgroundColor: "#16becf",
+      backgroundColor: "#00A6D4",
     },
   },
   linkItem: {
@@ -26,12 +25,13 @@ const useStyles = makeStyles((theme) => ({
   },
   socialIcons: {
     display: "flex",
-    width: "150px",
+    width: "100px",
     justifyContent: "space-around",
+    padding: "0 1rem",
   },
   Icon: {
     "&:hover": {
-      fill: "#16becf",
+      fill: "#00A6D4",
       fontWeight: "600",
       cursor: "pointer",
     },
