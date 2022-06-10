@@ -50,7 +50,7 @@ export const codeData = [
       { url: "history-map.mp4", title: "Weekly History of Aggregated Tweets" },
     ],
     github: "https://github.com/kiana-h/twitt-stream-er",
-    live: "https://tweetstreamer.com",
+    live: "https://www.tweetstreamer.com/",
     timeline: "2020",
   },
   {
@@ -81,7 +81,7 @@ export const codeData = [
       { url: "landing.png", title: "Landing Page" },
     ],
     github: "https://github.com/kiana-h/lake-hopper",
-    live: "https://lakehopper.io",
+    live: "https://www.lakehopper.io/",
     timeline: "2020-2021",
   },
 ];
