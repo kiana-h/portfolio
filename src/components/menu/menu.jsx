@@ -49,7 +49,7 @@ export default function Menu() {
                 About
               </Typography>
             </Link>
-            <a
+            {/* <a
               target="_blank"
               href={
                 process.env.PUBLIC_URL +
@@ -63,7 +63,7 @@ export default function Menu() {
                   Resume
                 </Button>
               </Typography>
-            </a>
+            </a> */}
           </List>
         </Toolbar>
       </AppBar>
