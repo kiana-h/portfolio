@@ -9,8 +9,8 @@ export default function About({ section }) {
   const bioInfo = [
     "I grew up in Iran and moved to the US for grad school.",
     "I have a master's degree in architecture from Yale and a bachelor's degree from University of Tehran.",
-    "I design and develop fullstack applications; most recently focused on developing a data platform to help urban planners design better cities.",
     "I'm a licensed architect in California. I've designed everything from furniture and single-family houses, to office campuses, schools, and hospitals",
+    "I design and develop fullstack applications; most recently focused on developing a data platform to help urban planners design better cities.",
     "My happy place: highway 1 on my motorcycle, or in a tent in the Sierra backcountry.",
   ];
   const myBio = () => {
